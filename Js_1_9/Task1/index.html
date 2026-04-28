@@ -1,0 +1,27 @@
+//Task one
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Learn JavaScript</title>
+    <script>
+      /* Code One will NOT work because it runs in the <head> before the element
+       is loaded, so getElementById("el") returns null and causes an error.*/
+      document.getElementById("el").style.color = "red";
+    </script>
+    <script>
+      // Code Two works because it waits for page load
+      window.onload = function () {
+        document.getElementById("el").style.color = "red";
+      };
+    </script>
+  </head>
+  <body>
+    <h1 id="el">Page Title</h1>
+    <script>
+      // Code Three runs
+      document.getElementById("el").style.color = "red";
+    </script>
+  </body>
+</html>
